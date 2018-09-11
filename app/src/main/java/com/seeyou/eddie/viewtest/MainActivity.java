@@ -61,6 +61,13 @@ public class MainActivity extends AppCompatActivity {
             }
         }).start();
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        handleThread.quit();
+    }
+
     class ThreadCustom extends Thread{
         @Override
         public void run() {
